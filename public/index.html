@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World !!!</h1>
+    <br>
+    <h1 id="sensor"></h1>
+    <script>
+        const socket = new WebSocket("ws://localhost:8080");
+        sensor_element = document.getElementById("sensor");
+
+        socket.onopen = () => 
+        {
+            console.log("WebSocket connection opened");
+            // Send a message to the server
+            socket.send("Hello from the browser!");
+        };
+
+        // Listen to the message event, which contains the data received from the server
+        socket.onmessage = (event) => 
+        {
+            console.log("Message from the server:", event.data);
+            sensor_element.innerHTML=event.data;
+        };
+
+        // Listen to the close event, which indicates the connection is closed
+        socket.onclose = (event) => 
+        {
+            console.log("WebSocket connection closed");
+        };
+
+        // Listen to the error event, which indicates there is an error with the connection
+        socket.onerror = (error) => 
+        {
+            console.error("WebSocket error:", error);
+        };
+    </script>
+</body>
+</html>
