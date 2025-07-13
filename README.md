@@ -8,7 +8,7 @@ The websocket's url is : localhost:8080
 
 If running in linux, change the portname COMX (where X=1,2,3,...) to /dev/ttyUSBY (where Y=0,1,2...).
 
-You can check the correct port in linux using the following command : 
+You can check the correct port name in linux using the following command : 
 
 ```
 dmesg | grep tty
