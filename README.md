@@ -14,5 +14,20 @@ You can check the correct port name in linux using the following command :
 dmesg | grep tty
 ```
 
-
 On windows, search for Device Manager and open the Ports subsection.
+
+# Arduino sample code
+
+Here is the sample code I used for this project. It just outputs the number of milliseconds since the arduino started.
+
+```
+void setup() {
+  Serial.begin(19200);
+  delay(1250);
+}
+
+void loop() {
+  Serial.println(millis());
+  delay(1000);
+}
+```
