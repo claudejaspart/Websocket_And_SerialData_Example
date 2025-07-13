@@ -23,7 +23,6 @@ Here is the sample code I used for this project. It just outputs the number of m
 ```
 void setup() {
   Serial.begin(19200);
-  delay(1250);
 }
 
 void loop() {
