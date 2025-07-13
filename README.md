@@ -1,7 +1,7 @@
 # Websocket_And_SerialData_Example
 A nodejs webserver reads data from a serial port (ie data emitted from an arduino) and updates its value on a webpage using a websocket.
 
-# Note
+# Notes
 The server's url is : localhost:3000
 
 The websocket's url is : localhost:8080
